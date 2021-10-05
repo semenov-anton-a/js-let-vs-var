@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript var VS let</title>
+</head>
+<body>
+    <h1>LET vs VAR</h1>
+    <hr/>
+    <p>
+        Разница между именованием перенных LET и VAR.
+        <br>
+        Область видимости VAR за пределами цыкла.<br/>
+        Однако LET, область видимости только в пределах цыла.
+        <br/>
+        Вывод : <strong>Используй LET</strong>
+
+    </p>
+    <style>
+        body{
+            text-align: center;
+        }
+        td{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        div{
+            width: 150px;
+            /* height: 100%; */
+            padding: 30px;
+            /* margin: 20px 00px; */
+            text-align: center;
+            display: inline-table;
+        }
+    </style>
+
+    <div class="let_exsaple">
+        <h3>LET</h3>
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <span></span>
+    </div>
+
+    <script>        
+        /**
+         * LET
+         */
+        let letTDs = document.querySelectorAll('div.let_exsaple td');
+        let letIte = document.querySelectorAll('div.let_exsaple span');
+
+        for( let i=0; i< letTDs.length; i ++)
+        {
+            letTDs[i].addEventListener('click', function(){
+                this.innerHTML = i + 1;
+            });
+        }
+
+        if (typeof i !== 'undefined') 
+        {
+            letIte[0].innerHTML = i;
+        }else{
+            letIte[0].innerHTML = 'Variable "i" is not defined';
+        }
+        // console.log(i);
+
+    </script>
+
+    <div class="var_example">
+        <h3>VAR</h3>
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+       <span>TEST</span>
+    </div>
+    <script>        
+        /**
+         * VAR
+         */
+        var varTDs = document.querySelectorAll('div.var_example td');
+        var varIte = document.querySelectorAll('div.var_example span');
+
+        for( var i=0; i< letTDs.length; i ++)
+        {
+            varTDs[i].addEventListener('click', function(){
+                this.innerHTML = i + 1;
+            });
+        }
+
+        if (typeof i !== 'undefined') 
+        {
+            varIte[0].innerHTML = 'Variable "i" value '+i;
+        }else{
+            varIte[0].innerHTML = 'Variable "i" is not defined';
+        }
+        
+        // console.log(i);
+    </script>
+
+</body>
+</html>
